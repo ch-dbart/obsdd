@@ -1,8 +1,4 @@
-.Xauthority
-.dbus
+.ksh-history
 .less
-.pki
 .sndio
 .ssh
-.xsession-errors
-.ksh-history
