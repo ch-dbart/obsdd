@@ -1,5 +1,5 @@
 #env
-LESS = -firs~ -x 4 -P %t
+LESS = -firs -x 4 -P %t
 
 #command
 / forw-search
