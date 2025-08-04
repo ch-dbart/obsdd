@@ -1,0 +1,4 @@
+#!/bin/sh
+
+lesskey
+doas usermod -G staff $(whoami)
