@@ -3,6 +3,7 @@
 alias ls='ls -1F'
 alias pls='doas $(fc -ln -1)'
 alias rsync='openrsync -a --rsync-path=/usr/bin/openrsync'
+alias top='top -1 -s 1 -U $(whoami)'
 
 set -o vi
 set -A complete_got_1 -- \
