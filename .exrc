@@ -7,7 +7,6 @@ set report=0
 set ruler
 set shiftwidth=4
 set showfilename
-set showmatch
 set showmode
 set tabstop=4
 set verbose
