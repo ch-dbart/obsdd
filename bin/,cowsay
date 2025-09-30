@@ -1,0 +1,14 @@
+#!/bin/sh -e
+
+cow='''
+       \   ^__^
+        \  (oo)\_______
+           (__)\       )\/\
+               ||----w |
+               ||     ||
+'''
+
+quote=$(/usr/games/fortune)
+
+printf '%s\n' "$quote"
+printf '%s\n' "$cow"
