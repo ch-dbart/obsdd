@@ -3,20 +3,32 @@ LESS = -firs -x 4 -P %t
 
 #command
 / forw-search
+:e visual
+:f status
+:h help
+:n next-file
+:p prev-file
+:q quit
 ? back-search
 G goto-end
-H prev-file
-J forw-line
-K back-line
-L next-file
 N reverse-search
+^B back-screen
+^D forw-scroll
+^F forw-screen
+^L repaint
+^U back-scroll
 g goto-line
 h left-scroll
-j forw-screen
-k back-screen
+j forw-line
+k back-line
 l right-scroll
 n repeat-search
-q quit
+{ forw-bracket {}
+} back-bracket {}
+( forw-bracket ()
+) forw-bracket ()
+] forw-bracket []
+[ forw-bracket []
 #stop
 
 #line-edit
