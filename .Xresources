@@ -1,0 +1,13 @@
+xterm.*.faceName: xft:spleen:pixelsize=12:antialias=false
+xterm.*.fullscreen: true
+xterm.*.internalBorder: 16
+xterm.*.loginShell: true
+xterm.*.metaSendsEscape: true
+xterm.*.saveLines: 0
+xterm.*.scaleHeight: 1.2
+xterm.*.scrollBar: false
+xterm.*.utf8: true
+
+xterm.*.background: #151515
+xterm.*.cursorColor: #151515
+xterm.*.foreground: #d0d0d0
