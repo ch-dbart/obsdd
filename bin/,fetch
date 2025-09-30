@@ -1,0 +1,10 @@
+#!/bin/sh
+
+printf '%s\t\t\t\t%s\n'        '     _____    ' "$(whoami)@$(hostname -s)"
+printf '%s\n'                  '  \\-     -/  '
+printf '%s\t\tos:\t\t%s\n'     '\\_/        \\' "$(uname) $(uname -r) $(machine)"
+printf '%s\t\thost:\t\t%s\n'   '|        O O |' "$(sysctl -n hw.version)"  
+printf '%s\t\tuptime:\t\t%s\n' '|_  <   )  3 )' "$(uptime | cut -f 1,1 -d , | grep -o '  .*' | sed 's/  //1')"
+printf '%s\t\tshell:\t\t%s\n'  '/ \\        / ' "$SHELL"
+printf '%s\t\tpackages:\t%s\n' '   /-_____-\\ ' "$(pkg_info -A | wc -l | sed 's/ //g')"
+printf '\n'
