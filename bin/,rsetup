@@ -1,0 +1,33 @@
+#!/bin/sh
+
+cat << EOF > /etc/boot.conf
+boot
+EOF
+
+cat << EOF > /etc/doas.conf
+permit nopass keepenv :wheel
+EOF
+
+cat << EOF > /etc/mixerctl.conf
+outputs.master=255,255
+outputs.master.mute=off
+EOF
+
+cat << EOF > /etc/sysctl.conf
+kern.shminfo.shmall=4194304
+kern.shminfo.shmmax=2147483647
+kern.shminfo.shmmni=1024
+machdep.lidaction=0
+EOF
+
+cat << EOF > /etc/wsconsctl.conf
+display.screen_off=0
+keyboard.bell.volume=0
+keyboard.encoding=us.swapctrlcaps
+keyboard.repeat.deln=35
+keyboard.repeat.del1=190
+EOF
+
+pkg_add got
+rcctl enable {apmd,xenodm}
+sed -i 's/rw/rw,noatime/g' '/etc/fstab'
