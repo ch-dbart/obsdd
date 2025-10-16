@@ -4,11 +4,9 @@ LESS = -firs -x 4 -P %t
 #command
 / forw-search
 :e visual
-:f status
 :h help
 :n next-file
 :p prev-file
-:q quit
 ? back-search
 G goto-end
 N reverse-search
@@ -23,6 +21,7 @@ j forw-line
 k back-line
 l right-scroll
 n repeat-search
+q quit
 { forw-bracket {}
 } back-bracket {}
 ( forw-bracket ()
