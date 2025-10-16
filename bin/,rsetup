@@ -28,6 +28,37 @@ keyboard.repeat.deln=35
 keyboard.repeat.del1=190
 EOF
 
-pkg_add got
+mkdir -p /etc/X11/xorg.conf.d/
+
+cat << EOF > /etc/X11/xorg.conf.d/intel.conf
+Section "Device"
+    Identifier "drm"
+    Driver "intel"
+    Option "TearFree" "true"
+    Option "TripleBuffer" "true"
+    Option "DRI" "2"
+EndSection
+EOF
+
+cat << EOF > /etc/X11/xorg.conf.d/keyboard.conf
+Section "InputClass"
+    Identifier "system-keyboard"
+    MatchIsKeyboard "on"
+    Option "AutoRepeat" "190 35"
+    Option "XkbLayout" "us"
+    Option "XkbVariant" "altgr-intl"
+EndSection
+EOF
+
+cat << EOF > /etc/X11/xorg.conf.d/server.conf
+Section "ServerFlags"
+    Option "BlankTime" "0"
+    Option "OffTime" "0"
+    Option "StandbyTime" "0"
+    Option "SuspendTime" "0"
+EndSection
+EOF
+
+pkg_add dictd-client got kakoune pick tree xbanish
 rcctl enable {apmd,xenodm}
 sed -i 's/rw/rw,noatime/g' '/etc/fstab'
